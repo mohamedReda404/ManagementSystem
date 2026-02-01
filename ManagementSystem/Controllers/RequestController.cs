@@ -73,5 +73,16 @@ namespace ManagementSystem.Controllers
 
 
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Edite(int id)
+        {
+            var deleted = await _request.Delete(id);
+
+            if (deleted == null)
+                return NotFound();
+
+            return Ok(deleted);
+        }
+
     }
 }

@@ -36,7 +36,7 @@ namespace ManagementSystem.Services
                 {
                     Id = d.Id,
                     Name = d.Name,
-                    ManagerName = d.ManagerName
+                   // ManagerName = d.ManagerName
                 })
                 .ToListAsync();
         }

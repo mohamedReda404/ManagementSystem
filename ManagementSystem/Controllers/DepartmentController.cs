@@ -10,7 +10,6 @@ namespace ManagementSystem.Controllers
 
 
 
-
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
@@ -64,6 +63,21 @@ namespace ManagementSystem.Controllers
         {
             var result = await _depatment.GetAll();
             return Ok(result);
+        }
+
+
+
+
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Edite(int id)
+        {
+            var deleted = await _depatment.Delete(id);
+
+            if (deleted == null)
+                return NotFound();
+
+            return Ok(deleted);
         }
 
 

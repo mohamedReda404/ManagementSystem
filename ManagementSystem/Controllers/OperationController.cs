@@ -1,7 +1,5 @@
 ﻿
 
-using ManagementSystem.Services;
-
 namespace ManagementSystem.Controllers
 {
     [Route("api/[controller]")]
@@ -66,7 +64,16 @@ namespace ManagementSystem.Controllers
         }
 
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Edite(int id)
+        {
+            var deleted = await _operation.Delete(id);
 
+            if (deleted == null)
+                return NotFound();
+
+            return Ok(deleted);
+        }
 
     }
 }

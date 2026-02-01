@@ -12,6 +12,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 builder.Services.AddScoped<IEmployee, EmployeeSrvices>();
 builder.Services.AddScoped<IDepartment, DepartmentServices>();
 builder.Services.AddScoped<IRequest, RequestServices>();
+builder.Services.AddScoped<IOperation, OperationsServices>();
 var app = builder.Build();
 
 
